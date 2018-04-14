@@ -5,23 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="css/fa/web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="css/app.css">  
 </head>
 <body>
   
-<script type="text/javascript">
-  document.onkeydown = function(e) {
-    console.log(e);
-    if(e.keyCode == 37) {
-      // LEFT
-    } else if(e.keyCode == 39) {
-      // RIGHT
-    } else if(e.keyCode == 38) {
-      //UP
-    } else if(e.keyCode == 40) {
-      //DOWN
-    }
-  }
-</script>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-4">
+        <i class="fal fa-arrows"></i>
+    </div>
+  </div>
+</div>
+
+
+  <script type="text/javascript">
+
+      var leftValue = 400, topValue = 250;
+
+      function update() {
+        document.querySelector(".fa-arrows").style.left = leftValue+"px";
+        document.querySelector(".fa-arrows").style.top = topValue+"px";
+      }
+
+      document.onkeydown = function(e) {
+        console.log(e);
+        if(e.keyCode == 37 && leftValue > 0) {
+            leftValue -= 10;
+        } else if(e.keyCode == 39 && leftValue < 500) {
+            leftValue += 10;
+        } else if(e.keyCode == 40 && topValue < 500) {
+            topValue += 10;
+        } else if(e.keyCode == 38 && topValue > 0) {
+            topValue -= 10;
+        }
+        update();
+      }
+
+
+    </script>
 </body>
 </html>
