@@ -11,7 +11,7 @@ function swap() {
   console.log('My number is now ' + myNumber);
   console.log('My name is now ' + temp);
 }
-swap();
+// swap();
 
 
 // print -52 to 1066
@@ -35,7 +35,7 @@ function beCheerful() {
     console.log("good morning!");
   }
 }
-beCheerful();
+// beCheerful();
 
 /* Multiples of Three – but Not All
 Using FOR, print multiples of 3 from -300 to 0.
@@ -172,7 +172,7 @@ Print integers 1 to 100. If divisible by 5, print
      console.log(i);
    } 
  }
- countingDojoWay();
+//  countingDojoWay();
 
 
 
@@ -262,8 +262,122 @@ function theFinalCountDown(mult, lowNum, highNum, skip) {
     num++;
   }
 }
-theFinalCountDown(3,5,17,9);
+// theFinalCountDown(3,5,17,9);
   
   
+/*
+Countdown
+Create a function that accepts a number as an input. Return a new array that counts down by one, from
+the number (as array’s ‘zeroth’ element) down to 0 (as the last element). How long is this array?
+*/
+
+function countdownInput(number) {
+  var array = [];
+  for(var i = number; i >= 0; i--) {
+    array.push(i);
+  }
+  console.log(array.length);
+  return array;
+}
+// countdownInput(30);
 
 
+/*
+Print and Return
+Your function will receive an array with two numbers. Print the first value, and return the second.
+*/
+
+function printAndReturnTwoNumbers(num1, num2) {
+  console.log(num1);
+  return num2;
+}
+// printAndReturnTwoNumbers(22, 2);
+
+/*
+First Plus Length
+Given an array, return the sum of the first value in the array, plus the array’s length. What happens if
+the array’s first value is not a number, but a string (like "what?") or a boolean (like false).
+*/
+
+function firstPlusLength(array) {
+  return array[0] + array.length;
+}
+
+console.log(firstPlusLength([20,22,23,24,25])); //returns 25
+console.log(firstPlusLength(["what?", 1,2,3,4])); //returns what?5
+console.log(firstPlusLength([false, 1,2,3,4,5])); //returns 5
+
+/*
+Values Greater than Second
+For [1,3,5,7,9,13], print values that are greater than its 2nd value. Return how many values this is.
+*/
+
+function valuesGreaterThanTheSecond(array) {
+  var count = 0;
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > array[1]) {
+      console.log(array[i]);
+      count++;
+    }
+    console.log("Count is: " + count);
+  }
+}
+// valuesGreaterThanTheSecond([1,3,5,7,9,13]);
+//count ends up being 4 
+
+/*
+Values Greater than Second, Generalized
+Write a function that accepts any array, and returns a new array with the array values that are greater
+than its 2nd value. Print how many values this is. What will you do if the array is only one element long?
+*/
+
+function valuesGreaterThanTheSecondGeneralized(array) {
+  var count = 0;
+  var array2 = [];
+  if(array.length < 2) {
+    console.log('There is not enough in the array for this function to work on it');
+  }
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > array[1]) {
+      array2.push(array[i]);
+      count++;
+    }
+  }
+  console.log("Count is: " + count);
+  console.log(array2);
+  return array2;
+}
+// valuesGreaterThanTheSecondGeneralized([1,3,5,7,9,13]);
+// valuesGreaterThanTheSecondGeneralized([1]);
+
+
+/*
+This Length, That Value
+Given two numbers, return array of length num1 with each value num2. Print "Jinx!" if they are same.
+*/
+
+
+/*
+Fit the First Value
+Your function should accept an array. If value at [0] is greater than array’s length, print "Too big!";
+if value at [0] is less than array’s length, print "Too small!"; otherwise print "Just right!".
+*/
+
+/*
+Fahrenheit to Celsius
+Kelvin wants to convert between temperature scales. Create fahrenheitToCelsius(fDegrees)
+that accepts a number of degrees in Fahrenheit, and returns the equivalent temperature as expressed
+in Celsius degrees. For review, Fahrenheit = (9/5 * Celsius) + 32.
+*/
+
+
+
+
+/*
+Celsius to Fahrenheit
+Create celsiusToFahrenheit(cDegrees) that accepts number of degrees Celsius, and returns
+the equivalent temperature expressed in Fahrenheit degrees.
+(optional) Do Fahrenheit and Celsius values equate at a certain number? Scientific calculation can be
+complex, so for this challenge just try a series of Celsius integer values starting at 200, going downward
+(descending), checking whether it is equal to the corresponding Fahrenheit value.
+*/
