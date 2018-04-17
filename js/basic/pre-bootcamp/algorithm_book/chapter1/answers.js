@@ -134,7 +134,7 @@ function multiplesOfFive() {
   }
   alert(myFunctionCalls);
 }
-multiplesOfFive();
+// multiplesOfFive();
 
 
 
@@ -143,9 +143,15 @@ multiplesOfFive();
 Print multiples of 6 up to 60,000, using a WHILE.
  */
 
- function whileLoop() {
-
+ function whileLoopSix() {
+   var start = 0;
+  while(start < 60000) {
+    start+=6;
+    console.log(start);
+  }
  }
+//  whileLoopSix();
+
 
 
 
@@ -155,6 +161,18 @@ Print integers 1 to 100. If divisible by 5, print
 "Coding" instead. If by 10, also print " Dojo".
  */
 
+ function countingDojoWay() {
+   for(var i = 1; i <= 100; i++) {
+     if(i % 5 ==0) {
+       console.log('Coding');
+     }
+     if(i % 10 ==0) {
+       console.log(' Dojo');
+     }
+     console.log(i);
+   } 
+ }
+ countingDojoWay();
 
 
 
@@ -165,13 +183,30 @@ incoming. Please console.log this value.
 */
 
 
+function inputParameter(age) {
+  age = prompt('What is your age?');
+
+  document.write('<h1>You are '+ age+ ' years old!</h1>');
+}
+// inputParameter();
+
 /*
 Whoa, That Sucker’s Huge…
 Add odd integers from -300,000 to 300,000, and
 console.log the final sum. Is there a shortcut?
 */
 
-
+function suckerHuge() {
+  var sum = 0, start = -300000, end = 300000;
+  for(var i = start; i < end; i++) {
+    if(i % 2 == 0) {
+      continue;
+    }
+    sum += i;
+    console.log(sum);
+  }
+}
+// suckerHuge();
 
 
 /*
@@ -179,6 +214,16 @@ Countdown by Fours
 Log positive numbers starting at 2016, counting
 down by fours (exclude 0), without a FOR loop.
 */
+function whileCountDown() {
+  var start = 2020;
+  while(start > 4) {
+    if(start % 4 == 0) {
+      start -= 4;
+      console.log(start);
+    }
+  }
+}
+// whileCountDown();
 
 
 
@@ -190,6 +235,15 @@ from highNum down to lowNum, using a FOR.
 For (2,9,3), print 9 6 3 (on successive lines)
 */
 
+function flexibleCountDown(lowNum, highNum, mult) {
+  var num = highNum;
+  while(num > lowNum) {
+    console.log(num);
+    num -= mult;
+  }
+}
+// flexibleCountDown(0, 2016, 4);
+
 
 /*
 The Final Countdown
@@ -199,6 +253,17 @@ print the multiples of param1, starting at param2 and extending to param3. One e
 multiple is equal to param4, then skip (don’t print) it. Do this using a WHILE. Given (3,5,17,9), print
 6,12,15 (which are all of the multiples of 3 between 5 and 17, and excluding the value 9).
 */
-
+function theFinalCountDown(mult, lowNum, highNum, skip) {
+  var num = lowNum;
+  while(num < highNum) {
+    if(num % mult == 0 && num != skip) {
+      console.log(num);
+    }
+    num++;
+  }
+}
+theFinalCountDown(3,5,17,9);
+  
+  
 
 
