@@ -356,12 +356,36 @@ This Length, That Value
 Given two numbers, return array of length num1 with each value num2. Print "Jinx!" if they are same.
 */
 
-
+function lengthValue(num1, num2) {
+  var array = [];
+  if(num1 == num2) {
+    console.log("Jinx!");
+  }
+  for(var i = 0; i < num1; i++) {
+    array[i] = num2;
+  }
+  return array;
+}
+console.log(lengthValue(10,10));
+console.log(lengthValue(10, 0));
 /*
 Fit the First Value
 Your function should accept an array. If value at [0] is greater than array’s length, print "Too big!";
 if value at [0] is less than array’s length, print "Too small!"; otherwise print "Just right!".
 */
+
+
+function fitTheFirstValue(array) {
+  if(array[0] > array.length) {
+    console.log("Too big!");
+  } else if(array[0] < array.length) {
+    console.log("Too small!");
+  } else {
+    console.log("Just right!");
+  }
+}
+fitTheFirstValue([10,1,2,3,4,5,6,7,8,9]);
+
 
 /*
 Fahrenheit to Celsius
@@ -370,6 +394,10 @@ that accepts a number of degrees in Fahrenheit, and returns the equivalent tempe
 in Celsius degrees. For review, Fahrenheit = (9/5 * Celsius) + 32.
 */
 
+
+function fahrenheitToCelsius(fDegrees) {
+  return ((fDegrees - 32) * 5) / 9;
+}
 
 
 
@@ -380,4 +408,192 @@ the equivalent temperature expressed in Fahrenheit degrees.
 (optional) Do Fahrenheit and Celsius values equate at a certain number? Scientific calculation can be
 complex, so for this challenge just try a series of Celsius integer values starting at 200, going downward
 (descending), checking whether it is equal to the corresponding Fahrenheit value.
+*/
+
+function celsiusToFahrenheit(cDegrees) {
+  return (cDegrees * 9/5) + 32;
+}
+
+
+/*
+Biggie Size
+Given an array, write a function that changes all
+positive numbers in the array to “big”. Example:
+makeItBig([-1,3,5,-5]) returns that same
+array, changed to [-1,"big","big",-5].
+*/
+
+function biggieSize(array) {
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > 0) {
+      array[i] = "big";
+    }
+  }
+  return array;
+} 
+console.log(biggieSize([0,1,2,3,-1]));
+/*
+Print Low, Return High
+Create a function that takes array of numbers.
+The function should print the lowest value in the
+array, and return the highest value in the array.
+*/
+function printLowReturnHigh(array) {
+  var low = array[0];
+  var high = array[0];
+  for(var i = 1; i < array.length; i++) {
+    if(array[i] < low) {
+      low = array[i];
+    }
+    if(array[i] > high) {
+      high = array[i];
+    }
+  }
+  console.log("The low is: " + low);
+  return "The highest is "+ high;
+}
+printLowReturnHigh([1,2,3,4,5,6,7,8,9]);
+
+
+
+/*
+Print One, Return Another
+Build a function that takes array of numbers. The
+function should print second-to-last value in the
+array, and return first odd value in the array.
+*/
+
+function printOneReturnAnother(array) {
+  console.log(array[array.length - 2]); //-2 prints the second to last item -1 prints the last item
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] % 2 != 0) {
+      console.log(array[i]); // printing the first item in the array that is an odd value
+      return array[i];
+    }
+  }
+}
+printOneReturnAnother([1,2,3,4,5]);
+
+/*
+Double Vision
+Given array, create a function to return a new
+array where each value in the original has been
+doubled. Calling double([1,2,3]) should
+return [2,4,6] without changing original.
+*/
+
+function doubleVision(array) {
+  var newArray = [];
+  for(var i = 0; i < array.length; i++) {
+    newArray.push(array[i]*2);
+  }
+  console.log(array);
+  console.log(newArray);
+  return newArray;
+}
+doubleVision([1,2,3]);
+
+/*
+Count Positives
+Given array of numbers, create function to
+replace last value with number of positive values.
+Example, countPositives([-1,1,1,1])
+changes array to [-1,1,1,3] and returns it.
+*/
+
+function countPositives(array) {
+  var count = 0;
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > 0) {
+      count++;
+    }
+  }
+  array[array.length-1] = count; // changes the last number to the count variable
+  console.log(array);
+  return array;
+}
+countPositives([-1,1,1,1]);
+
+/*
+Evens and Odds
+Create a function that accepts an array. Every
+time that array has three odd values in a row,
+print "That’s odd!" Every time the array has
+three evens in a row, print "Even more so!"
+*/
+function evensAndOdds(array) {
+  for(i=0; i < array.length; i++) {
+    if(array[i] && array[i+1] && array[i+2]) {
+        if(array[i]%2==0 && array[i+1]%2==0 &&  array[i+2]%2==0) { 
+        console.log("Even more so!");
+        }
+        if(array[i]%2!=0 && array[i+1]%2!=0 &&  array[i+2]%2!=0) {
+        console.log("That's odd!");
+        }
+	  }
+  }
+}
+
+evensAndOdds([1,3,3]);
+evensAndOdds([2,4,6,7]);
+evensAndOdds([1,3,5,6,8,6,7,9,5]);
+
+
+/*
+Increment the Seconds
+Given arr, add 1 to odd elements ([1], [3],
+etc.), console.log all values and return arr.
+*/
+
+/*
+Previous Lengths
+You are passed an array containing strings.
+Working within that same array, replace each
+string with a number – the length of the string at
+previous array index – and return the array.
+*/
+
+/*
+Add Seven to Most
+Build function that accepts array. Return a new
+array with all values except first, adding 7 to
+each. Do not alter the original array.
+*/
+
+/*
+Reverse Array
+Given array, write a function to reverse values,
+in-place. Example: reverse([3,1,6,4,2])
+returns same array, containing [2,4,6,1,3].
+*/
+
+/*
+Outlook: Negative
+Given an array, create and return a new one
+containing all the values of the provided array,
+made negative (not simply multiplied by -1).
+Given [1,-3,5], return [-1,-3,-5].
+*/
+
+/*
+Always Hungry
+Create a function that accepts an array, and
+prints "yummy" each time one of the values is
+equal to "food". If no array elements are
+"food", then print "I'm hungry" once.
+*/
+
+/*
+Swap Toward the Center
+Given array, swap first and last, third and third-tolast,
+etc. Input[true,42,"Ada",2,"pizza"]
+becomes ["pizza",42,"Ada",2,true].
+Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
+*/
+
+
+/*
+Scale the Array
+Given array arr and number num, multiply each
+arr value by num, and return the changed arr.
 */
