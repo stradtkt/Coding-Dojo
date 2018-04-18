@@ -187,6 +187,7 @@ function inputParameter(age) {
   age = prompt('What is your age?');
 
   document.write('<h1>You are '+ age+ ' years old!</h1>');
+  console.log('You are '+ age+ ' years old!');
 }
 // inputParameter();
 
@@ -262,7 +263,7 @@ function theFinalCountDown(mult, lowNum, highNum, skip) {
     num++;
   }
 }
-// theFinalCountDown(3,5,17,9);
+theFinalCountDown(3,5,17,9);
   
   
 /*
@@ -524,10 +525,10 @@ three evens in a row, print "Even more so!"
 function evensAndOdds(array) {
   for(i=0; i < array.length; i++) {
     if(array[i] && array[i+1] && array[i+2]) {
-        if(array[i]%2==0 && array[i+1]%2==0 &&  array[i+2]%2==0) { 
+        if(array[i]% 2 == 0 && array[i+1] % 2 == 0 &&  array[i+2 ]% 2 == 0) { 
         console.log("Even more so!");
         }
-        if(array[i]%2!=0 && array[i+1]%2!=0 &&  array[i+2]%2!=0) {
+        if(array[i] % 2 != 0 && array[i+1 ]% 2 != 0 &&  array[i+2 ]% 2 != 0) {
         console.log("That's odd!");
         }
 	  }
@@ -545,6 +546,16 @@ Given arr, add 1 to odd elements ([1], [3],
 etc.), console.log all values and return arr.
 */
 
+function incrementSeconds(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    if(i % 2 != 0) {
+      arr[i]++; // finding the odd numbers and incrementing them
+    }
+    console.log(arr[i]);
+  }
+  return arr;
+}
+incrementSeconds([1,2,3,4,5,6,7]);
 /*
 Previous Lengths
 You are passed an array containing strings.
@@ -553,12 +564,34 @@ string with a number – the length of the string at
 previous array index – and return the array.
 */
 
+function previousLengths(array) {
+  for(var i = array.length; i >= 1; i--) {
+    var str = array[i - 1];
+    array[i] = str.length;
+  }
+  console.log(array);
+  return array;
+}
+previousLengths(["my", "name", "is", "kevin", "what", "is", "yours"]);
+
+
 /*
 Add Seven to Most
 Build function that accepts array. Return a new
 array with all values except first, adding 7 to
 each. Do not alter the original array.
 */
+
+function addSevenToMost(arr) {
+  var newArr = [];
+  for(var i = 1; i < arr.length; i++) {
+    newArr.push(arr[i] + 7);
+  }
+  console.log(newArr);
+  return newArr;
+}
+addSevenToMost([1,1,2,2,3,3,4,5,6]);
+
 
 /*
 Reverse Array
@@ -567,6 +600,18 @@ in-place. Example: reverse([3,1,6,4,2])
 returns same array, containing [2,4,6,1,3].
 */
 
+
+function reverseArray(array) {
+  var newArray = new Array;
+  for(var i = array.length-1; i >= 0; i--) {
+      newArray.push(array[i]);
+  }
+  console.log(newArray);
+  return newArray;
+}
+
+reverseArray([3,1,6,4,2]);
+
 /*
 Outlook: Negative
 Given an array, create and return a new one
@@ -574,7 +619,19 @@ containing all the values of the provided array,
 made negative (not simply multiplied by -1).
 Given [1,-3,5], return [-1,-3,-5].
 */
-
+function outlookNegative(array) {
+  var newArray = [];
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > 0) {
+      newArray.push(array[i] - array[i]*2);
+    } else {
+      newArray.push(array[i]);
+    }
+  }
+  console.log(newArray);
+  return newArray;
+}
+outlookNegative([1,-3,5]);
 /*
 Always Hungry
 Create a function that accepts an array, and
@@ -583,6 +640,21 @@ equal to "food". If no array elements are
 "food", then print "I'm hungry" once.
 */
 
+function alwaysHungry(array) {
+  var isFood = false;
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] == "food") {
+      console.log("yummy");
+      isFood = true;
+    }
+  }
+  if(!isFood) {
+    console.log("I am hungry");
+  }
+}
+alwaysHungry([1,2,3,"food", "none"]);
+
+
 /*
 Swap Toward the Center
 Given array, swap first and last, third and third-tolast,
@@ -590,10 +662,34 @@ etc. Input[true,42,"Ada",2,"pizza"]
 becomes ["pizza",42,"Ada",2,true].
 Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
 */
+function swapTowardCenter(arr) {
+  var left = 0;
+  var right = arr.length - 1;
+  while(left < right) {
+    var temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
 
+    left+=2;
+    right-=2;
+  }
+  console.log(arr);
+  return arr;
+}
+swapTowardCenter([true, 42, "Ada", 2, "pizza"]);
+swapTowardCenter([1,2,3,4,5,6]);
 
 /*
 Scale the Array
 Given array arr and number num, multiply each
 arr value by num, and return the changed arr.
 */
+
+function scaleTheArray(arr, num) {
+  for(var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] * num;
+  }
+  console.log(arr);
+  return arr;
+}
+scaleTheArray([12,22,32,42,52],22);
