@@ -90,7 +90,7 @@ function sumOfOddNumbers() {
      console.log(sum);
      return sum;
    }
-   sumDivisibleByThree();
+  //  sumDivisibleByThree();
 
 /**
  * Given an array that is passed in find the values that are greater than the third position in an array
@@ -111,7 +111,7 @@ function sumOfOddNumbers() {
    console.log(newArray);
    return newArray;
  }
- printNumbersGreaterThanTheThird([1,2,3,4,5,6,7,8,9]);
+//  printNumbersGreaterThanTheThird([1,2,3,4,5,6,7,8,9]);
 
 
  /**
@@ -128,7 +128,7 @@ function sumOfOddNumbers() {
     console.log(arr2);
     return arr2;
   }
-  flipArray([1,2,3,1,2,3]);
+  // flipArray([1,2,3,1,2,3]);
 
 
 function reversalString(str) {
@@ -173,7 +173,7 @@ function reversalString(str) {
 //7 
   return str.split('').reduce((revString, char) => char + revString, '');
 }
-console.log(reversalString("Hello, my name is Kevin!"));
+// console.log(reversalString("Hello, my name is Kevin!"));
 
 
 //check if it is a palindrome
@@ -190,7 +190,7 @@ function reverseInt(int) {
   const revString = int.toString().split('').reverse().join('');
   return parseInt(revString) * Math.sign(int);
 }
-console.log(reverseInt(-12345));
+// console.log(reverseInt(-12345));
 
 
 //capitalize letters 
@@ -214,7 +214,7 @@ function capitalizeLetters(str) {
   // });
 }
 
-console.log(capitalizeLetters('i love javascript'));
+// console.log(capitalizeLetters('i love javascript'));
 
 
 function maxCharacter(str) {
@@ -238,7 +238,7 @@ function maxCharacter(str) {
   return maxChar;
 }
 
-console.log(maxCharacter('JavaScriptttttt'));
+// console.log(maxCharacter('JavaScriptttttt'));
 
 function fizzBuzz() {
   for(let i = 1; i <= 100; i++) {
@@ -253,4 +253,103 @@ function fizzBuzz() {
     }
   }
 }
-fizzBuzz();
+// fizzBuzz();
+
+
+function logestWord(sen) {
+  const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
+
+  const sorted = wordArr.sort(function(a,b) {
+    return b.length - a.length;
+  });
+  //if multiple words then put into array
+  const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
+  if(longestWordArr.length === 1) {
+    return longestWordArr[0];
+  } else {
+    return longestWordArr;
+  }
+}
+
+console.log(logestWord("Hello there, my name is Kevin"));
+
+
+function chunkArray(arr, len) {
+//1
+  // const chunkedArr = [];
+  // let i = 0;
+  // //loop while the index is less than the array length
+  // while(i < arr.length) {
+  //   //slice out from the index to the index + chunk length and then push on the chunkedarr
+  //   chunkedArr.push(arr.slice(i, i + len));
+  //   //increment by the chunked length
+  //   i += len;
+  // }
+  // return chunkedArr;
+
+  const chunkedArr = [];
+  arr.forEach(function(val) {
+    const last = chunkedArr[chunkedArr.length - 1];
+    if(!last || last.length === len) {
+      chunkedArr.push([val]);
+    } else {
+      last.push(val);
+    }
+  });
+  return chunkedArr;
+}
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9], 2));
+
+function flattenArray(arrays) {
+  //1
+  // return arrays.reduce(function(a,b) {
+  //   return a.concat(b); 
+  // });
+
+  //2
+  // return [].concat.apply([], arrays);
+
+  //3 
+  // function add(a,b,c) {
+  //   return a + b + c;
+  // }
+  // const arr = [1,2,3];
+  // console.log(add(...arr));
+
+  //4
+  return [].concat(...arrays);
+}
+// const output = flattenArray([[1,2], [3,4], [5,6], [7]]);
+// console.log(output);
+
+function isAnagram(str1, str2) {
+  return formatStr(str1) === formatStr(str2);
+}
+function formatStr(str) {
+  return str
+    .replace(/[^\w]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('')
+}
+// const output = isAnagram('elbow', 'below');
+// const output = isAnagram('Dormitory', 'dirty room');
+// console.log(output);
+
+
+function letterChanges(str) {
+  let newStr = str.toLowerCase().replace(/[a-z]/gi, function(char) {
+    if(char === 'z' || char === 'Z') {
+      return 'a';
+    } else {
+      return String.fromCharCode(char.charCodeAt() + 1);
+    }
+  });
+  newStr = newStr.replace(/a|e|i|o|u/gi, function(vowel) {
+    return vowel.toUpperCase();
+  });
+  return newStr;
+}
+// const output = letterChanges("Hello There");
+// console.log(output);
