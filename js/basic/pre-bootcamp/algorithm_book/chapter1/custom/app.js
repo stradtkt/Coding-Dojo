@@ -203,11 +203,54 @@ function capitalizeLetters(str) {
   // }
   // return strArr.join(' ');
 //2 
-  return str
-    .toLowerCase()
-    .split(' ')
-    .map(word => word[0].toUpperCase() + word.substr(1))
-    .join(' ');
+  // return str
+  //   .toLowerCase()
+  //   .split(' ')
+  //   .map(word => word[0].toUpperCase() + word.substr(1))
+  //   .join(' ');
+//3
+  // return str.replace(/\b[a-z]/gi, function(char) {
+  //   return char.toUpperCase();
+  // });
 }
 
 console.log(capitalizeLetters('i love javascript'));
+
+
+function maxCharacter(str) {
+  const charMap = {};
+  let maxNum = 0;
+  let maxChar = '';
+
+  str.split('').forEach(function(char) {
+    if(charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  });
+  for(let char in charMap) {
+    if(charMap[char] > maxNum) {
+      maxNum = charMap[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+}
+
+console.log(maxCharacter('JavaScriptttttt'));
+
+function fizzBuzz() {
+  for(let i = 1; i <= 100; i++) {
+    if(i % 15 === 0) {
+      console.log('FizzBuzz');
+    } else if(i % 3 === 0) {
+      console.log('Fizz');
+    } else if(i % 5 === 0) {
+      console.log('Buzz')
+    } else {
+      console.log(i);
+    }
+  }
+}
+fizzBuzz();
