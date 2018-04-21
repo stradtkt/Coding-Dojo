@@ -131,9 +131,83 @@ function sumOfOddNumbers() {
   flipArray([1,2,3,1,2,3]);
 
 
-  /**
-   * Change the last item in the array
-   */
-  function lastItemChanged(array) {
-    
-  }
+function reversalString(str) {
+//1
+// return str.split('').reverse().join('');
+//2
+  // let revString = '';
+  // for(let i = str.length - 1; i >= 0; i--) {
+  //   revString += str[i];
+  // }
+  // console.log(revString);
+  // return revString;
+
+//3
+  // let revString = '';
+  // for(let i = 0; i <= str.length - 1; i++) {
+  //   revString = str[i] + revString;
+  // }
+  // console.log(revString);
+  // return revString;
+
+//4
+  // let revString = '';
+  // for(let char of str) {
+  //   revString = char + revString;
+  // }
+  // console.log(revString);
+  // return revString;
+
+//5
+  // let revString = '';
+  // str.split('').forEach((char) => revString = char + revString);
+  // console.log(revString);
+  // return revString;
+
+//6
+// return str.split('').reduce(function(revString, char) {
+//   console.log(char + revString);
+//   return char + revString;
+// }, '');
+
+//7 
+  return str.split('').reduce((revString, char) => char + revString, '');
+}
+console.log(reversalString("Hello, my name is Kevin!"));
+
+
+//check if it is a palindrome
+function isPalidrome(str) {
+  const revString = str.split('').reverse().join('');
+  return revString === str;
+}
+console.log(isPalidrome("racecar"));
+console.log(isPalidrome("Kevin"));
+
+
+//reverse a int
+function reverseInt(int) {
+  const revString = int.toString().split('').reverse().join('');
+  return parseInt(revString) * Math.sign(int);
+}
+console.log(reverseInt(-12345));
+
+
+//capitalize letters 
+function capitalizeLetters(str) {
+//1
+  // const strArr = str.toLowerCase().split(' ');
+
+  // for(let i = 0; i < strArr.length; i++) {
+  //   strArr[i] = strArr[i].substring(0,1).toUpperCase() + strArr[i].substring(1);
+  // }
+  // return strArr.join(' ');
+//2 
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.substr(1))
+    .join(' ');
+}
+
+console.log(capitalizeLetters('i love javascript'));
