@@ -1,3 +1,4 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 // setting and swapping
     //set myNumber to 42
     //set myName to your name
@@ -13,7 +14,7 @@ function swap() {
 }
 // swap();
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 // print -52 to 1066
     //print integers from -52 to 1066 using a for loop
 
@@ -25,7 +26,7 @@ function swap() {
     }
     // forLoop();
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Don’t Worry, Be Happy
 //Create beCheerful(). Within it, console.log
 //string "good morning!" Call it 98 times
@@ -36,7 +37,7 @@ function beCheerful() {
   }
 }
 // beCheerful();
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Multiples of Three – but Not All
 Using FOR, print multiples of 3 from -300 to 0.
 Skip -3 and -6.
@@ -53,7 +54,7 @@ function skipNumbers() {
 }
 // skipNumbers();
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Printing Integers with While
 Print integers from 2000 to 5280, using a WHILE
@@ -68,6 +69,7 @@ function whileLoop() {
 }
 // whileLoop();
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 You Say It’s Your Birthday
@@ -103,7 +105,7 @@ function birthday() {
       
   }
   // birthday();
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Leap Year
 Write a function that determines whether a given
@@ -118,7 +120,7 @@ function leapYear(year) {
 }
 leapYear();
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Print and Count
 Print all integer multiples of 5, from 512 to 4096.
@@ -137,7 +139,7 @@ function multiplesOfFive() {
 // multiplesOfFive();
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
  /*
  Multiples of Six
 Print multiples of 6 up to 60,000, using a WHILE.
@@ -154,7 +156,7 @@ Print multiples of 6 up to 60,000, using a WHILE.
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
  /*
  Counting, the Dojo Way
 Print integers 1 to 100. If divisible by 5, print
@@ -175,7 +177,7 @@ Print integers 1 to 100. If divisible by 5, print
 //  countingDojoWay();
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 What Do You Know?
 Your function will be given an input parameter
@@ -190,7 +192,7 @@ function inputParameter(age) {
   console.log('You are '+ age+ ' years old!');
 }
 // inputParameter();
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Whoa, That Sucker’s Huge…
 Add odd integers from -300,000 to 300,000, and
@@ -209,7 +211,7 @@ function suckerHuge() {
 }
 // suckerHuge();
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Countdown by Fours
 Log positive numbers starting at 2016, counting
@@ -227,7 +229,7 @@ function whileCountDown() {
 // whileCountDown();
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Flexible Countdown
 Based on earlier “Countdown by Fours”, given
@@ -243,9 +245,9 @@ function flexibleCountDown(lowNum, highNum, mult) {
     num -= mult;
   }
 }
-// flexibleCountDown(0, 2016, 4);
+// flexibleCountDown(2, 9, 3);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 The Final Countdown
 This is based on “Flexible Countdown”. The parameter names are not as helpful, but the problem is
@@ -263,9 +265,11 @@ function theFinalCountDown(mult, lowNum, highNum, skip) {
     num++;
   }
 }
-theFinalCountDown(3,5,17,9);
+// theFinalCountDown(3,5,17,9);
+// theFinalCountDown(2,10,22,16);
+// theFinalCountDown(/*mult, lowNum, highNum, skip*/);
   
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Countdown
 Create a function that accepts a number as an input. Return a new array that counts down by one, from
@@ -274,14 +278,18 @@ the number (as array’s ‘zeroth’ element) down to 0 (as the last element). 
 
 function countdownInput(number) {
   var array = [];
+  var count = 0;
   for(var i = number; i >= 0; i--) {
+    count++;
+    console.log('Counting: ' + count)
     array.push(i);
   }
   console.log(array.length);
   return array;
 }
-// countdownInput(30);
-
+// countdownInput(30); // leaves it with 31 items in the array
+// countdownInput(20); //leaves it with 21 items in the array
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 Print and Return
@@ -293,7 +301,7 @@ function printAndReturnTwoNumbers(num1, num2) {
   return num2;
 }
 // printAndReturnTwoNumbers(22, 2);
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 First Plus Length
 Given an array, return the sum of the first value in the array, plus the array’s length. What happens if
@@ -304,10 +312,10 @@ function firstPlusLength(array) {
   return array[0] + array.length;
 }
 
-console.log(firstPlusLength([20,22,23,24,25])); //returns 25
-console.log(firstPlusLength(["what?", 1,2,3,4])); //returns what?5
-console.log(firstPlusLength([false, 1,2,3,4,5])); //returns 5
-
+// console.log(firstPlusLength([20,22,23,24,25])); //returns 25
+// console.log(firstPlusLength(["what?", 1,2,3,4])); //returns what?5
+// console.log(firstPlusLength([false, 1,2,3,4,5])); //returns 5
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Values Greater than Second
 For [1,3,5,7,9,13], print values that are greater than its 2nd value. Return how many values this is.
@@ -324,8 +332,9 @@ function valuesGreaterThanTheSecond(array) {
   }
 }
 // valuesGreaterThanTheSecond([1,3,5,7,9,13]);
+// valuesGreaterThanTheSecond([1,4,5,6,7,8,9,10,12]);//count is 7 because they are all being compared to the 4 in the array
 //count ends up being 4 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Values Greater than Second, Generalized
 Write a function that accepts any array, and returns a new array with the array values that are greater
@@ -348,10 +357,10 @@ function valuesGreaterThanTheSecondGeneralized(array) {
   console.log(array2);
   return array2;
 }
-// valuesGreaterThanTheSecondGeneralized([1,3,5,7,9,13]);
+valuesGreaterThanTheSecondGeneralized([1,3,5,7,9,13]); //returns [5,7,9,13]
 // valuesGreaterThanTheSecondGeneralized([1]);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 This Length, That Value
 Given two numbers, return array of length num1 with each value num2. Print "Jinx!" if they are same.
@@ -367,8 +376,9 @@ function lengthValue(num1, num2) {
   }
   return array;
 }
-console.log(lengthValue(10,10));
-console.log(lengthValue(10, 0));
+// console.log(lengthValue(10,10));
+// console.log(lengthValue(10, 0));
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Fit the First Value
 Your function should accept an array. If value at [0] is greater than array’s length, print "Too big!";
@@ -385,8 +395,8 @@ function fitTheFirstValue(array) {
     console.log("Just right!");
   }
 }
-fitTheFirstValue([10,1,2,3,4,5,6,7,8,9]);
-
+// fitTheFirstValue([10,1,2,3,4,5,6,7,8,9]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 Fahrenheit to Celsius
@@ -400,7 +410,7 @@ function fahrenheitToCelsius(fDegrees) {
   return ((fDegrees - 32) * 5) / 9;
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 Celsius to Fahrenheit
@@ -415,7 +425,7 @@ function celsiusToFahrenheit(cDegrees) {
   return (cDegrees * 9/5) + 32;
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Biggie Size
 Given an array, write a function that changes all
@@ -432,7 +442,8 @@ function biggieSize(array) {
   }
   return array;
 } 
-console.log(biggieSize([0,1,2,3,-1]));
+// console.log(biggieSize([0,1,2,3,-1]));
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Print Low, Return High
 Create a function that takes array of numbers.
@@ -453,10 +464,10 @@ function printLowReturnHigh(array) {
   console.log("The low is: " + low);
   return "The highest is "+ high;
 }
-printLowReturnHigh([1,2,3,4,5,6,7,8,9]);
+// printLowReturnHigh([1,2,3,4,5,6,7,8,9]);
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Print One, Return Another
 Build a function that takes array of numbers. The
@@ -473,8 +484,8 @@ function printOneReturnAnother(array) {
     }
   }
 }
-printOneReturnAnother([1,2,3,4,5]);
-
+// printOneReturnAnother([1,2,3,4,5]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Double Vision
 Given array, create a function to return a new
@@ -492,8 +503,8 @@ function doubleVision(array) {
   console.log(newArray);
   return newArray;
 }
-doubleVision([1,2,3]);
-
+// doubleVision([1,2,3]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Count Positives
 Given array of numbers, create function to
@@ -513,8 +524,8 @@ function countPositives(array) {
   console.log(array);
   return array;
 }
-countPositives([-1,1,1,1]);
-
+// countPositives([-1,1,1,1]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Evens and Odds
 Create a function that accepts an array. Every
@@ -535,11 +546,11 @@ function evensAndOdds(array) {
   }
 }
 
-evensAndOdds([1,3,3]);
-evensAndOdds([2,4,6,7]);
-evensAndOdds([1,3,5,6,8,6,7,9,5]);
+// evensAndOdds([1,3,3]);
+// evensAndOdds([2,4,6,7]);
+// evensAndOdds([1,3,5,6,8,6,7,9,5]);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Increment the Seconds
 Given arr, add 1 to odd elements ([1], [3],
@@ -555,7 +566,9 @@ function incrementSeconds(arr) {
   }
   return arr;
 }
-incrementSeconds([1,2,3,4,5,6,7]);
+// incrementSeconds([1,2,3,4,5,6,7]);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Previous Lengths
 You are passed an array containing strings.
@@ -572,9 +585,9 @@ function previousLengths(array) {
   console.log(array);
   return array;
 }
-previousLengths(["my", "name", "is", "kevin", "what", "is", "yours"]);
+// previousLengths(["my", "name", "is", "kevin", "what", "is", "yours"]);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Add Seven to Most
 Build function that accepts array. Return a new
@@ -590,8 +603,8 @@ function addSevenToMost(arr) {
   console.log(newArr);
   return newArr;
 }
-addSevenToMost([1,1,2,2,3,3,4,5,6]);
-
+// addSevenToMost([1,1,2,2,3,3,4,5,6]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 Reverse Array
@@ -610,8 +623,8 @@ function reverseArray(array) {
   return newArray;
 }
 
-reverseArray([3,1,6,4,2]);
-
+// reverseArray([3,1,6,4,2]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Outlook: Negative
 Given an array, create and return a new one
@@ -631,7 +644,8 @@ function outlookNegative(array) {
   console.log(newArray);
   return newArray;
 }
-outlookNegative([1,-3,5]);
+// outlookNegative([1,-3,5]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Always Hungry
 Create a function that accepts an array, and
@@ -652,9 +666,9 @@ function alwaysHungry(array) {
     console.log("I am hungry");
   }
 }
-alwaysHungry([1,2,3,"food", "none"]);
+// alwaysHungry([1,2,3,"food", "none"]);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Swap Toward the Center
 Given array, swap first and last, third and third-tolast,
@@ -676,9 +690,9 @@ function swapTowardCenter(arr) {
   console.log(arr);
   return arr;
 }
-swapTowardCenter([true, 42, "Ada", 2, "pizza"]);
-swapTowardCenter([1,2,3,4,5,6]);
-
+// swapTowardCenter([true, 42, "Ada", 2, "pizza"]);
+// swapTowardCenter([1,2,3,4,5,6]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Scale the Array
 Given array arr and number num, multiply each
@@ -692,4 +706,4 @@ function scaleTheArray(arr, num) {
   console.log(arr);
   return arr;
 }
-scaleTheArray([12,22,32,42,52],22);
+// scaleTheArray([12,22,32,42,52],22);
