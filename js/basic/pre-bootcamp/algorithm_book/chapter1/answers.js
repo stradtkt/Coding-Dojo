@@ -678,7 +678,7 @@ Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
 */
 function swapTowardCenter(arr) {
   var left = 0;
-  var right = arr.length - 1;
+  var right = arr.length - 1; //seeing how right right one is the last one 
   while(left < right) {
     var temp = arr[left];
     arr[left] = arr[right];
@@ -707,3 +707,5 @@ function scaleTheArray(arr, num) {
   return arr;
 }
 // scaleTheArray([12,22,32,42,52],22);
+
+

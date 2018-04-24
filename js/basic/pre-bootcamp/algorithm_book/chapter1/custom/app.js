@@ -351,6 +351,7 @@ function formatStr(str) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 function letterChanges(str) {
   let newStr = str.toLowerCase().replace(/[a-z]/gi, function(char) {
+    //you can do this for any letter that you want to match up too
     if(char === 'z' || char === 'Z') {
       return 'a';
     } else {
@@ -366,3 +367,60 @@ function letterChanges(str) {
 // console.log(output);
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
+function multiplyArray(arr, num) {
+  for(var i = 0; i < arr.length; i++) {
+    arr[i] *= num;
+  }
+  return arr;
+}
+// const output = multiplyArray([1,2,3,4,5,6], 10);
+// //scales the array and multiplies the last number to all of the elements in the array
+// console.log(output);
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+function captializeString(str) {
+  const strArr = str.toLowerCase().split(' ');
+  for(let i = 0; i < strArr.length; i++) {
+    //loop through the length of the string
+    //this capitalizes every first letter of a word
+    strArr[i] = strArr[i].substring(0,1).toUpperCase() + strArr[i].substring(1);
+    
+  } 
+  return strArr.join(' ');
+}
+// const output = captializeString("hello there, my name is kevin");
+// console.log(output);
+
+
+function checkIfSequence(sequence) {
+  let isSequenced = true;
+  for(let i = 0; i < sequence.length; i++) {
+      if(isNaN(sequence[i])) {
+          isSequenced = false;
+      } 
+      if(i + 1 !== sequence.length && sequence[i] >= sequence[i + 1]) {
+          isSequenced = false;
+      } 
+  }
+  return isSequenced;
+}
+  
+function almostIncreasingSequence(sequence) {
+  if(checkIfSequence(sequence)) {
+      return true;
+  }
+  for(let i = 0; i < sequence.length; i++) {
+      const newSequence = sequence.slice();
+      newSequence.splice(i, 1);
+      if(checkIfSequence(newSequence)) {
+          return true;
+      }
+  }
+  return false;
+}
+
+checkIfSequence(1,2,3,4,5);
+const output = almostIncreasingSequence(1,2,3,4,5);
+console.log(output);
